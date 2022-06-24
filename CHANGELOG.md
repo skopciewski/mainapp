@@ -1,3 +1,9 @@
+# development
+
+# 1.0.2 (2022.06.24)
+
+* tune ci
+
 # 1.0.1 (2022.06.24)
 
 * gh integration
