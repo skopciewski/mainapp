@@ -8,6 +8,10 @@ test:
 	bundle exec rake
 .PHONY: test
 
-gem:
+build:
 	bundle exec rake build
-.PHONY: gem
+.PHONY: build
+
+push:
+	gem push pkg/*.gem
+.PHONY: push
