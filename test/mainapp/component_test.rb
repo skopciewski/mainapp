@@ -4,8 +4,8 @@ require "test_helper"
 require "mainapp/component"
 
 class TestComponent
-  extend ::Mainapp::Component
-  attr_app :foo, :bar
+  include ::Mainapp::Component
+  attr_struct :foo, :bar
 end
 
 class MainappComponentTest < Minitest::Test
