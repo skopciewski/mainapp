@@ -2,7 +2,8 @@
 
 [![Gem Version](https://badge.fury.io/rb/mainapp.svg)](http://badge.fury.io/rb/mainapp)
 
-`.set` method extracted from the Sinatra::Base
+`.set` method extracted from the Sinatra::Base, and helper for the components
+convention
 
 ## Installation
 
@@ -20,6 +21,8 @@ Or install it yourself as:
 
 ## Usage
 
+### Creating structure with components
+
 ```ruby
 class My
   extend ::Mainapp::Base
@@ -27,7 +30,23 @@ end
 
 My.set foo: 1
 
-My.foo => 1
+My.foo #=> 1
+```
+
+### Working with components
+
+```ruby
+class TestComponent
+  include ::Mainapp::Component
+  attr_struct :foo, :bar
+
+  def some_method
+    pp foo
+  end
+end
+
+components = {foo: 1, bar: 2, baz: 3}
+handler = TestComponent.new components
 ```
 
 ## Versioning
